@@ -1,0 +1,12 @@
+# opencv-python-headless (not opencv-python): this project never opens a GUI
+# window (no cv2.imshow), and the headless build avoids the libGL / libglib
+# system-library dependency that breaks on minimal Linux containers such as
+# GitHub Codespaces, Docker slim images, and most CI runners.
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+
+# HEIC / HEIF support (iPhone's default camera format since iOS 11).
+# pillow-heif ships precompiled libheif wheels for Linux/macOS/Windows, so
+# plain pip install is normally enough -- no system apt packages needed.
+Pillow>=10.0.0
+pillow-heif>=0.13.0
